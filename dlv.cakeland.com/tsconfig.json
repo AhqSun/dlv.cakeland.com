@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "amd",
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}
