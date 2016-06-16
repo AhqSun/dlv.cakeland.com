@@ -12,6 +12,7 @@ function onChange(value:Date, dateString:string) {
     console.log(value, dateString);
 }
 
+
 ReactDOM.render(<DatePicker  onChange={onChange}/>, document.getElementById("react-content"));
 
 
