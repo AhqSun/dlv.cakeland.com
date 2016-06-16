@@ -1,4 +1,4 @@
-# dlv.cakeland.com
+# dlv
 提供配送使用
 
 ##主要目的
