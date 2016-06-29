@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "antd": "^1.4.1",
-    "bootstrap": "^3.3.6",
+    "classnames": "^2.2.5",
     "react": "^15.1.0",
-    "react-bootstrap": "^0.29.4",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1",
-    "requirejs": "^2.2.0"
+    "react-weui": "^0.4.0",
+    "requirejs": "^2.2.0",
+    "weui": "^0.4.2"
   },
   "devDependencies": {},
   "scripts": {

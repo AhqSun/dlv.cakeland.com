@@ -1,8 +1,5 @@
-define(["require", "exports", "react", "react-dom", 'antd'], function (require, exports, React, ReactDOM, antd_1) {
+define(["require", "exports", "react", "react-dom", "./tabbar"], function (require, exports, React, ReactDOM, tabbar_1) {
     "use strict";
-    function onChange(value, dateString) {
-        console.log(value, dateString);
-    }
-    ReactDOM.render(React.createElement(antd_1.DatePicker, {onChange: onChange}), document.getElementById("react-content"));
+    ReactDOM.render(React.createElement(tabbar_1.default, null), document.getElementById("react-content"));
 });
 //# sourceMappingURL=app.js.map
