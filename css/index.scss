@@ -1,4 +1,13 @@
 ﻿
-#react-content,body,html{
+body,html{
     height:100%;
+    background-color:#fbf9fe;
  }
+
+.page_title {
+    text-align: center;
+    font-size: 34px;
+    color: #225fba;
+    font-weight: 400;
+    margin: 0 15%;
+}

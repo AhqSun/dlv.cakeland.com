@@ -20,54 +20,28 @@ import TabBarLabel from "./weui/components/tab/tabbar_label";
 import Article from "./weui/components/article/article";
 
 
+
+
+
 const IconButton = '/images/icon_nav_button.png';
 const IconMsg = '/images/icon_nav_msg.png';
 const IconArticle = '/images/icon_nav_article.png';
 const IconCell = '/images/icon_nav_cell.png';
-export default class TabBarDemo extends React.Component<any,any> {
-    state = {
-        tab: 0
-    };
+
+
+export default class Main extends React.Component<any,any> {   
+    constructor() {
+        super();
+        this.state = {tab:0};
+    }
 
     render() {
         return (
             <Tab>
                 <TabBody>
-                    <Article style={{ display: this.state.tab == 0 ? null : 'none' }}>
-                        <h1>选项页1</h1>
-                        <section>
-                            <h2 className="title">章标题</h2>
-                            <section>
-                                <h3>1.1 节标题</h3>
-                                <p>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                            </section>
-                        </section>
-                    </Article>
-                    <Article style={{ display: this.state.tab == 1 ? null : 'none' }}>
-                        <h1>通讯录</h1>
-                        <section>
-                            <h2 className="title">章标题</h2>
-                            <section>
-                                <h3>2.1 节标题</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.Duis aute</p>
-                            </section>
-                        </section>
-                    </Article>
-                    <Article style={{ display: this.state.tab == 2 ? null : 'none' }}>
-                        <h1>发现</h1>
-                        <section>
-                            <h2 className="title">章标题</h2>
-                        </section>
-                    </Article>
-                    <Article style={{ display: this.state.tab == 3 ? null : 'none' }}>
-                        <h1>我</h1>
-                        <section>
-                            <h2 className="title">章标题</h2>
-                        </section>
-                    </Article>
+                    <Article>
+                        {this.props.children}
+                     </Article>                   
                 </TabBody>
                 <TabBar>
                     <TabBarItem

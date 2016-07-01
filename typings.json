@@ -1,0 +1,6 @@
+{
+  "name": "dlv.cakeland.com",
+  "dependencies": {
+    "react": "registry:npm/react#15.0.1+20160601175240"
+  }
+}

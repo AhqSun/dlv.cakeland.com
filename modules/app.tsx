@@ -6,10 +6,37 @@
 import * as React from "react";
 import * as  ReactDOM  from "react-dom";
 
-import TabBarDemo from "./tabbar";
+import Main from "./main";
+
+import { Router, Route, Link, hashHistory } from 'react-router';
+import Login from 'login'
 
 
-ReactDOM.render(<TabBarDemo />, document.getElementById("react-content"));
+class App extends React.Component<any , any>{
+  
+ 
+    handleEnter({location}, repalce: any) {
+        console.log(location);
+        var {pathname, state} = location;
+        if (pathname != "/login" &&!state.login) {           
+            repalce("/login");
+        }
+    }
+    render() {
+        return (
+            <Router history={hashHistory}>
+                <Route path="/" component={Main} onEnter={this.handleEnter}>
+                 
+                </Route>
+                <Route path="login" component={Login}/>
+            </Router>
+
+        );
+    }
+
+}
+
+ReactDOM.render(<App />, document.body);
 
 
 

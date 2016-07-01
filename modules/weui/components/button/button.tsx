@@ -41,10 +41,10 @@ export default class Button extends React.Component<any,any> {
             [className]: className
         });
         if (this.props.href) {
-            return <a  className={cls}>{children}</a>
+            return <a  className={cls} {...this.props}>{children}</a>
         }
         else {
-            return <button  className={cls}>{children}</button>
+            return <button  className={cls} {...this.props}>{children}</button>
         }      
     }
 };

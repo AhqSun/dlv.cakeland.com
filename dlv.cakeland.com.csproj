@@ -74,9 +74,41 @@
     <Content Include="css\index.min.css">
       <DependentUpon>index.css</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="modules\login.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\actionsheet\actionsheet.tsx" />
     <TypeScriptCompile Include="modules\weui\components\article\article.tsx" />
     <TypeScriptCompile Include="modules\weui\components\button\button.tsx" />
     <TypeScriptCompile Include="modules\weui\components\button\button_area.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cell.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cells.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cells_tips.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cells_title.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cell_body.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cell_footer.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\cell\cell_header.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\dialog\alert.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\dialog\confirm.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\checkbox.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\form.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\form_cell.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\input.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\radio.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\select.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\switch.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\textarea.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\form\uploader.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\grid\grid.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\grid\grids.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\grid\grid_icon.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\grid\grid_label.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\icon\icon.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\label\label.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\mask\mask.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\panel\panel.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\panel\panel_body.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\panel\panel_footer.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\panel\panel_header.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\progress\progress.tsx" />
     <TypeScriptCompile Include="modules\weui\components\tab\index.tsx" />
     <TypeScriptCompile Include="modules\weui\components\tab\navbar.tsx" />
     <TypeScriptCompile Include="modules\weui\components\tab\tab.tsx" />
@@ -85,6 +117,7 @@
     <TypeScriptCompile Include="modules\weui\components\tab\tabbar_item.tsx" />
     <TypeScriptCompile Include="modules\weui\components\tab\tabbar_label.tsx" />
     <TypeScriptCompile Include="modules\weui\components\tab\tab_body.tsx" />
+    <TypeScriptCompile Include="modules\weui\components\toast\toast.tsx" />
     <TypeScriptCompile Include="modules\weui\index.tsx" />
     <TypeScriptCompile Include="modules\weui\components\button\index.tsx" />
     <Content Include="images\icon_nav_actionSheet.png" />
@@ -2166,7 +2199,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <TypeScriptCompile Include="modules\tabbar.tsx" />
+    <TypeScriptCompile Include="modules\main.tsx" />
     <TypeScriptCompile Include="node_modules\react\node_modules\fbjs\node_modules\immutable\contrib\cursor\index.d.ts" />
     <TypeScriptCompile Include="node_modules\react\node_modules\fbjs\node_modules\immutable\dist\immutable-nonambient.d.ts" />
     <TypeScriptCompile Include="node_modules\react\node_modules\fbjs\node_modules\immutable\dist\immutable.d.ts" />
@@ -2181,7 +2214,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="modules\weui\components\msg\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="modules\app.tsx" />
   </ItemGroup>
