@@ -14,5 +14,9 @@
   {
     "outputFile": "node_modules/react-weui/src/components/icon/icon.es5.js",
     "inputFile": "node_modules/react-weui/src/components/icon/icon.js"
+  },
+  {
+    "outputFile": "node_modules/Q/q.es5.js",
+    "inputFile": "node_modules/Q/q.js"
   }
 ]

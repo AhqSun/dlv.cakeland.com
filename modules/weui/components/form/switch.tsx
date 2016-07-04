@@ -17,7 +17,9 @@ export default class Switch extends React.Component<any, any>  {
     static defaultProps = {
         defaultValue: ''
     };
-
+    componentDidMount() {
+        console.log(this.props);
+    }
     render() {
         const { className } = this.props;
         const cls = classNames({
@@ -26,7 +28,7 @@ export default class Switch extends React.Component<any, any>  {
         });
 
         return (
-            <input className={cls} type="checkbox" {... this.props}/>
+            <input className={cls} type="checkbox" {...this.props}/>
         );
     }
 };

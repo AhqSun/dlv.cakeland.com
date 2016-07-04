@@ -13,6 +13,9 @@
     },
     "classnames/classnames.d.ts": {
       "commit": "43449c604f997d75e917769c662e3d3b3fb2c0ae"
+    },
+    "q/Q.d.ts": {
+      "commit": "0bdc1385e378e2839fe1d6f0d5429f70b0ea8623"
     }
   }
 }

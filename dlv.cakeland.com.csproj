@@ -74,6 +74,7 @@
     <Content Include="css\index.min.css">
       <DependentUpon>index.css</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="modules\lib\data-base.d.ts" />
     <TypeScriptCompile Include="modules\login.tsx" />
     <TypeScriptCompile Include="modules\weui\components\actionsheet\actionsheet.tsx" />
     <TypeScriptCompile Include="modules\weui\components\article\article.tsx" />
@@ -132,6 +133,7 @@
     <Content Include="images\icon_nav_search_bar.png" />
     <Content Include="images\icon_nav_tab.png" />
     <Content Include="images\icon_nav_toast.png" />
+    <Content Include="modules\lib\data-base.js" />
     <Content Include="node_modules\.bin\r.js" />
     <Content Include="node_modules\classnames\bind.js" />
     <Content Include="node_modules\classnames\dedupe.js" />
@@ -374,6 +376,12 @@
     <Content Include="node_modules\react-weui\lib\components\tab\tab_body_item.js" />
     <Content Include="node_modules\react-weui\lib\components\toast\index.js" />
     <Content Include="node_modules\react-weui\lib\components\toast\toast.js" />
+    <Content Include="node_modules\react-weui\lib\index.es5.js">
+      <DependentUpon>index.js</DependentUpon>
+    </Content>
+    <Content Include="node_modules\react-weui\lib\index.es5.min.js">
+      <DependentUpon>index.es5.js</DependentUpon>
+    </Content>
     <Content Include="node_modules\react-weui\lib\index.js" />
     <Content Include="node_modules\react-weui\node_modules\classnames\bind.js" />
     <Content Include="node_modules\react-weui\node_modules\classnames\dedupe.js" />

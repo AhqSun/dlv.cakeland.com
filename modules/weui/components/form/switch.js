@@ -22,6 +22,9 @@ define(["require", "exports", "react", 'classnames'], function (require, exports
         function Switch() {
             _super.apply(this, arguments);
         }
+        Switch.prototype.componentDidMount = function () {
+            console.log(this.props);
+        };
         Switch.prototype.render = function () {
             var className = this.props.className;
             var cls = classNames((_a = {
