@@ -12,16 +12,16 @@ define(["require", "exports", "react", "./weui/components/form/form", "./weui/co
             _super.apply(this, arguments);
         }
         Login.prototype.componentDidMount = function () {
-            console.log(this.state);
+            console.log(this.props);
         };
         Login.prototype.handleClick = function () {
+            this.props.appState.login = true;
             react_router_1.hashHistory.push({
-                pathname: '/',
-                state: { login: true }
+                pathname: '/'
             });
         };
         Login.prototype.render = function () {
-            return (React.createElement("div", null, React.createElement("div", {class: "hd"}, React.createElement("h1", {className: "page_title"}, "用户登录")), React.createElement(form_1.default, null, React.createElement(form_cell_1.default, null, React.createElement(cell_header_1.default, null, React.createElement(label_1.default, null, "用户名")), React.createElement(cell_body_1.default, null, React.createElement(input_1.default, {type: "tel", placeholder: "请输入手机号"}))), React.createElement(form_cell_1.default, null, React.createElement(cell_header_1.default, null, React.createElement(label_1.default, null, "密码")), React.createElement(cell_body_1.default, null, React.createElement(input_1.default, {type: "tel", placeholder: "请输入密码"})))), React.createElement(button_area_1.default, null, React.createElement(button_1.default, {onClick: this.handleClick}, "确定"), React.createElement(button_1.default, {type: "default"}, "取消"))));
+            return (React.createElement("div", null, React.createElement("div", {class: "hd"}, React.createElement("h1", {className: "page_title"}, "用户登录")), React.createElement(form_1.default, null, React.createElement(form_cell_1.default, null, React.createElement(cell_header_1.default, null, React.createElement(label_1.default, null, "用户名")), React.createElement(cell_body_1.default, null, React.createElement(input_1.default, {type: "tel", placeholder: "请输入手机号"}))), React.createElement(form_cell_1.default, null, React.createElement(cell_header_1.default, null, React.createElement(label_1.default, null, "密码")), React.createElement(cell_body_1.default, null, React.createElement(input_1.default, {type: "tel", placeholder: "请输入密码"})))), React.createElement(button_area_1.default, null, React.createElement(button_1.default, {onClick: this.handleClick.bind(this)}, "确定"), React.createElement(button_1.default, {type: "default"}, "取消"))));
         };
         return Login;
     }(React.Component));

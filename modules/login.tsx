@@ -21,12 +21,15 @@ import {hashHistory } from 'react-router';
 const vcodeSrc = "https://weui.io/images/vcode.jpg";
 export default class Login extends React.Component<any, any>{
     componentDidMount() {
-        console.log(this.state);
+        console.log(this.props);
     }
     handleClick() {
+
+
+        this.props.appState.login = true;
+
         hashHistory.push({
-            pathname: '/',           
-            state: { login: true }
+            pathname: '/' 
         });
     }
     render() {
@@ -54,7 +57,7 @@ export default class Login extends React.Component<any, any>{
                     </FormCell>
                 </Form>
                 <ButtonArea>
-                    <Button onClick={this.handleClick}>确定</Button>
+                    <Button onClick={this.handleClick.bind(this)}>确定</Button>
                     <Button type="default">取消</Button>
                 </ButtonArea>
             </div>
