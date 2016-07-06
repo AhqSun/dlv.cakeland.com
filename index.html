@@ -13,7 +13,7 @@
             paths: {
                 'react': '/node_modules/react/dist/react.min',
                 'react-dom': '/node_modules/react-dom/dist/react-dom.min',
-                'react-router': '/node_modules/react-router/umd/ReactRouter.min',
+                'react-router': '/node_modules/react-router/umd/reactrouter.min',
                 'jquery': '/node_modules/jquery/dist/jquery.min',
                 'classnames': '/js/classnames.min',
                 'db': '/js/db.min',
@@ -28,10 +28,7 @@
             }
         };
     </script>
-    <script src="/js/require.min.js"  ></script> 
-    <script>
-        require(["app"]);
-    </script>
+    <script src="/js/require.min.js"  ></script>   
 </head>
 <body>   
     <div id="loadingToast" class="weui_loading_toast">
@@ -54,5 +51,6 @@
             <p class="weui_toast_content">数据加载中</p>
         </div>
     </div>
+    <script>require(["app"]);</script>
 </body>
 </html>

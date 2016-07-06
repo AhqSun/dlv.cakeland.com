@@ -178,6 +178,7 @@
     <TypeScriptCompile Include="modules\app.tsx" />
     <TypeScriptCompile Include="modules\lib\data-base.d.ts" />
     <TypeScriptCompile Include="modules\login.tsx" />
+    <TypeScriptCompile Include="modules\logout.tsx" />
     <TypeScriptCompile Include="modules\main.tsx" />
     <TypeScriptCompile Include="modules\weui\components\actionsheet\actionsheet.tsx" />
     <TypeScriptCompile Include="modules\weui\components\actionsheet\index.tsx" />

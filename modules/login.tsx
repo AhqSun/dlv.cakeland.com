@@ -44,8 +44,7 @@ export default class Login extends React.Component<any, any>{
         this.setState({ showAlert: false });
     }
 
-    onSubmit() {
-        this.props.appState.login = true;
+    onSubmit() {     
         if (this.state.userNameValid && this.state.passwordValid) {
             this.setState({ loading: true });
             auth.login({

@@ -12,7 +12,7 @@ import Login from 'login'
 
 
 var state = {
-    login: false 
+    user: null
 };
 
 
@@ -29,12 +29,20 @@ class MainWrapper extends React.Component<any, any>{
 
 }
 
+
 class App extends React.Component<any , any>{
   
  
-    handleEnter({location}, repalce: any) {   
-        var {pathname} = location;       
-        if (pathname != "/login" &&!state.login) {           
+    handleEnter({location}, repalce: any) {
+        var authString = localStorage.getItem("auth");
+        if (authString) {
+            state.user = JSON.parse(authString);
+        }
+        else {
+            state.user = null;
+        }
+        var {pathname} = location;
+        if (pathname != "/login" && state.user == null) {
             repalce("/login");
         }
     }

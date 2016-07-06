@@ -3,25 +3,11 @@
 // https://github.com/Microsoft/TypeScript/wiki/JSX
 import * as React from "react";
 
-import Button from "./weui/components/button/button";
-
-import Tab from "./weui/components/tab/tab";
-
-import TabBody from "./weui/components/tab/tab_body";
-
-import TabBar from "./weui/components/tab/tabbar";
-
-import TabBarItem from "./weui/components/tab/tabbar_item";
-
-import TabBarIcon from "./weui/components/tab/tabbar_icon";
-
-import TabBarLabel from "./weui/components/tab/tabbar_label";
-
-import Article from "./weui/components/article/article";
+import { Button, Tab, TabBody, TabBar, TabBarItem, TabBarIcon, TabBarLabel, Article, ActionSheet } from "./weui/index";
 
 
 
-
+import Logout from "./logout";
 
 const IconButton = '/images/icon_nav_button.png';
 const IconMsg = '/images/icon_nav_msg.png';
@@ -29,24 +15,33 @@ const IconArticle = '/images/icon_nav_article.png';
 const IconCell = '/images/icon_nav_cell.png';
 
 
-export default class Main extends React.Component<any,any> {   
-    constructor() {
-        super();
-        this.state = {tab:0};
-    }
 
+
+var callback = null;
+var tag = null;
+export default class Main extends React.Component<any, any> {
+    state = {
+        tab: 0
+    }
+    showLogoutMenu() {       
+        this.setState({ tab: 3 });      
+        if (callback) {         
+            callback.call(tag);
+        }
+    }  
     render() {
         return (
             <Tab>
                 <TabBody>
+                    <Logout setCallback={(f, e) => { callback = f; tag = e; } } />
                     <Article>
                         {this.props.children}
-                     </Article>                   
+                    </Article>
                 </TabBody>
                 <TabBar>
                     <TabBarItem
                         active={this.state.tab == 0}
-                        onClick={(e:any) => this.setState({ tab: 0 }) }
+                        onClick={(e: any) => this.setState({ tab: 0 }) }
                         icon={<img src={IconButton}/>}
                         label="微信"
                         />
@@ -64,12 +59,12 @@ export default class Main extends React.Component<any,any> {
                         />
                     <TabBarItem
                         active={this.state.tab == 3}
-                        onClick={(e: any) => this.setState({ tab: 3 }) }
+                        onClick={this.showLogoutMenu.bind(this) }
                         icon={<img src={IconCell}/>}
                         label="我"
                         />
                 </TabBar>
-            </Tab>
+            </Tab>    
         );
     }
 };

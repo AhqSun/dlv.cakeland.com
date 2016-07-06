@@ -59,377 +59,6 @@ define("weui/components/button/button", ["require", "exports", "react", 'classna
     ;
 });
 /**
- * Created by n7best
- */
-define("weui/components/tab/tab_body", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var TabBody = (function (_super) {
-        __extends(TabBody, _super);
-        function TabBody() {
-            _super.apply(this, arguments);
-        }
-        TabBody.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className;
-            var cls = classNames({
-                weui_tab_bd: true
-            }, className);
-            return (React.createElement("div", __assign({className: cls}, this.props), children));
-        };
-        return TabBody;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBody;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tab_body_item", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var TabBodyItem = (function (_super) {
-        __extends(TabBodyItem, _super);
-        function TabBodyItem() {
-            _super.apply(this, arguments);
-        }
-        TabBodyItem.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className, active = _a.active;
-            var cls = classNames({
-                weui_tab_bd_item: true
-            }, className);
-            return (React.createElement("div", __assign({className: cls, style: { display: active ? 'block' : 'none' }}, this.props), children));
-        };
-        TabBodyItem.propTypes = {
-            active: React.PropTypes.bool
-        };
-        TabBodyItem.defaultProps = {
-            active: false
-        };
-        return TabBodyItem;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBodyItem;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/navbar", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var NavBar = (function (_super) {
-        __extends(NavBar, _super);
-        function NavBar() {
-            _super.apply(this, arguments);
-        }
-        NavBar.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className;
-            var cls = classNames({
-                weui_navbar: true
-            }, className);
-            return (React.createElement("div", __assign({className: cls}, this.props), children));
-        };
-        return NavBar;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = NavBar;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/navbar_item", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var NavBarItem = (function (_super) {
-        __extends(NavBarItem, _super);
-        function NavBarItem() {
-            _super.apply(this, arguments);
-        }
-        NavBarItem.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className, active = _a.active, label = _a.label;
-            var cls = classNames({
-                weui_navbar_item: true,
-                weui_bar_item_on: active
-            }, className);
-            return (React.createElement("div", __assign({className: cls}, this.props), label ? label : children));
-        };
-        NavBarItem.propTypes = {
-            active: React.PropTypes.bool,
-            label: React.PropTypes.string
-        };
-        NavBarItem.defaultProps = {
-            active: false,
-        };
-        return NavBarItem;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = NavBarItem;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tabbar", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var TabBar = (function (_super) {
-        __extends(TabBar, _super);
-        function TabBar() {
-            _super.apply(this, arguments);
-        }
-        TabBar.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className;
-            var cls = classNames({
-                weui_tabbar: true
-            }, className);
-            return (React.createElement("div", __assign({className: cls}, this.props), children));
-        };
-        return TabBar;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBar;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tabbar_icon", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var TabBarIcon = (function (_super) {
-        __extends(TabBarIcon, _super);
-        function TabBarIcon() {
-            _super.apply(this, arguments);
-        }
-        TabBarIcon.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className;
-            var cls = classNames({
-                weui_tabbar_icon: true,
-            }, className);
-            return (React.createElement("div", __assign({className: cls}, this.props), children));
-        };
-        return TabBarIcon;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBarIcon;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tabbar_label", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var TabBarLabel = (function (_super) {
-        __extends(TabBarLabel, _super);
-        function TabBarLabel() {
-            _super.apply(this, arguments);
-        }
-        TabBarLabel.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className;
-            var cls = classNames({
-                weui_tabbar_label: true,
-            }, className);
-            return (React.createElement("p", __assign({className: cls}, this.props), children));
-        };
-        return TabBarLabel;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBarLabel;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tabbar_item", ["require", "exports", "react", 'classnames', "weui/components/tab/tabbar_icon", "weui/components/tab/tabbar_label"], function (require, exports, React, classNames, tabbar_icon_1, tabbar_label_1) {
-    "use strict";
-    var TabBarItem = (function (_super) {
-        __extends(TabBarItem, _super);
-        function TabBarItem() {
-            _super.apply(this, arguments);
-        }
-        TabBarItem.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className, active = _a.active, icon = _a.icon, label = _a.label;
-            var cls = classNames({
-                weui_tabbar_item: true,
-                weui_bar_item_on: active
-            }, className);
-            if (icon || label) {
-                return (React.createElement("div", __assign({className: cls}, this.props), icon ? React.createElement(tabbar_icon_1.default, null, icon) : false, label ? React.createElement(tabbar_label_1.default, null, label) : false));
-            }
-            else {
-                return (React.createElement("div", __assign({className: cls}, this.props), children));
-            }
-        };
-        TabBarItem.propTypes = {
-            active: React.PropTypes.bool,
-            icon: React.PropTypes.any,
-            label: React.PropTypes.string
-        };
-        TabBarItem.defaultProps = {
-            active: false,
-            icon: false,
-            label: ''
-        };
-        return TabBarItem;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = TabBarItem;
-});
-/**
- * Created by n7best
- */
-define("weui/components/tab/tab", ["require", "exports", "react", 'classnames', "weui/components/tab/tab_body", "weui/components/tab/tab_body_item", "weui/components/tab/navbar", "weui/components/tab/navbar_item", "weui/components/tab/tabbar", "weui/components/tab/tabbar_item"], function (require, exports, React, classNames, tab_body_1, tab_body_item_1, navbar_1, navbar_item_1, tabbar_1, tabbar_item_1) {
-    "use strict";
-    var Tab = (function (_super) {
-        __extends(Tab, _super);
-        function Tab() {
-            _super.apply(this, arguments);
-            this.state = {
-                index: this.props.defaultIndex
-            };
-        }
-        Tab.prototype.handleHeaderClick = function (idx) {
-            this.setState({ index: idx });
-            if (this.props.onChange)
-                this.props.onChange(idx);
-        };
-        Tab.prototype.parseNavBar = function (children) {
-            var navHeaders = [];
-            var navContents = [];
-            React.Children.map(children, function (child) {
-                var _a = child.props, children = _a.children, type = _a.type;
-                if (child.type === navbar_item_1.default) {
-                    navHeaders.push(child);
-                    if (children)
-                        navContents.push(React.createElement(tab_body_item_1.default, {children: children}));
-                }
-                else if (child.type === tab_body_item_1.default) {
-                    navContents.push(child);
-                }
-            });
-            return { navHeaders: navHeaders, navContents: navContents };
-        };
-        Tab.prototype.renderNavBar = function (headers, contents, cls) {
-            var _this = this;
-            var _headers = headers.map(function (item, idx) {
-                return React.cloneElement(item, {
-                    key: idx,
-                    active: _this.state.index === idx,
-                    onClick: _this.handleHeaderClick.bind(_this, idx, item)
-                });
-            });
-            var _contents = contents.map(function (item, idx) {
-                return React.cloneElement(item, {
-                    key: idx,
-                    active: _this.state.index === idx,
-                    tabIndex: idx
-                });
-            });
-            return (React.createElement("div", {className: cls}, React.createElement(navbar_1.default, null, _headers), React.createElement(tab_body_1.default, null, _contents)));
-        };
-        Tab.prototype.parseTabBar = function (children) {
-            var tabHeaders = [];
-            var tabContents = [];
-            React.Children.map(children, function (child) {
-                var _a = child.props, children = _a.children, type = _a.type;
-                if (child.type === tabbar_item_1.default) {
-                    tabHeaders.push(child);
-                    if (children)
-                        tabContents.push(React.createElement(tab_body_item_1.default, {children: children}));
-                }
-                else if (child.type === tab_body_item_1.default) {
-                    tabContents.push(child);
-                }
-            });
-            return { tabHeaders: tabHeaders, tabContents: tabContents };
-        };
-        Tab.prototype.renderTabBar = function (headers, contents, cls) {
-            var _this = this;
-            var _headers = headers.map(function (item, idx) {
-                return React.cloneElement(item, {
-                    key: idx,
-                    active: _this.state.index === idx,
-                    onClick: _this.handleHeaderClick.bind(_this, idx, item)
-                });
-            });
-            var _contents = contents.map(function (item, idx) {
-                return React.cloneElement(item, {
-                    key: idx,
-                    active: _this.state.index === idx,
-                    tabIndex: idx
-                });
-            });
-            return (React.createElement("div", {className: cls}, React.createElement(tab_body_1.default, null, _contents), React.createElement(tabbar_1.default, null, _headers)));
-        };
-        Tab.prototype.render = function () {
-            var _a = this.props, children = _a.children, className = _a.className, type = _a.type;
-            var cls = classNames({
-                weui_tab: true
-            }, className);
-            switch (type) {
-                case 'tabbar':
-                    var _b = this.parseTabBar(children), tabHeaders = _b.tabHeaders, tabContents = _b.tabContents;
-                    return this.renderTabBar(tabHeaders, tabContents, cls);
-                case 'navbar':
-                    var _c = this.parseNavBar(children), navHeaders = _c.navHeaders, navContents = _c.navContents;
-                    return this.renderNavBar(navHeaders, navContents, cls);
-                default:
-                    return (React.createElement("div", __assign({className: cls}, this.props), children));
-            }
-        };
-        Tab.propTypes = {
-            type: React.PropTypes.string,
-            defaultIndex: React.PropTypes.number,
-            onChange: React.PropTypes.func
-        };
-        Tab.defaultProps = {
-            type: 'normal',
-            defaultIndex: 0
-        };
-        return Tab;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = Tab;
-});
-/**
- * Created by jf on 15/12/11.
- */
-define("weui/components/article/article", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
-    "use strict";
-    var Article = (function (_super) {
-        __extends(Article, _super);
-        function Article() {
-            _super.apply(this, arguments);
-        }
-        Article.prototype.render = function () {
-            var _a = this.props, className = _a.className, children = _a.children;
-            var cls = classNames((_b = {
-                    weui_article: true
-                },
-                _b[className] = className,
-                _b
-            ));
-            return (React.createElement("article", __assign({className: cls}, this.props), children));
-            var _b;
-        };
-        return Article;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = Article;
-    ;
-});
-define("main", ["require", "exports", "react", "weui/components/tab/tab", "weui/components/tab/tab_body", "weui/components/tab/tabbar", "weui/components/tab/tabbar_item", "weui/components/tab/tabbar_icon", "weui/components/tab/tabbar_label", "weui/components/article/article"], function (require, exports, React, tab_1, tab_body_2, tabbar_2, tabbar_item_2, tabbar_icon_2, tabbar_label_2, article_1) {
-    "use strict";
-    var IconButton = '/images/icon_nav_button.png';
-    var IconMsg = '/images/icon_nav_msg.png';
-    var IconArticle = '/images/icon_nav_article.png';
-    var IconCell = '/images/icon_nav_cell.png';
-    var Main = (function (_super) {
-        __extends(Main, _super);
-        function Main() {
-            _super.call(this);
-            this.state = { tab: 0 };
-        }
-        Main.prototype.render = function () {
-            var _this = this;
-            return (React.createElement(tab_1.default, null, React.createElement(tab_body_2.default, null, React.createElement(article_1.default, null, this.props.children)), React.createElement(tabbar_2.default, null, React.createElement(tabbar_item_2.default, {active: this.state.tab == 0, onClick: function (e) { return _this.setState({ tab: 0 }); }, icon: React.createElement("img", {src: IconButton}), label: "微信"}), React.createElement(tabbar_item_2.default, {active: this.state.tab == 1, onClick: function (e) { return _this.setState({ tab: 1 }); }}, React.createElement(tabbar_icon_2.default, null, React.createElement("img", {src: IconMsg})), React.createElement(tabbar_label_2.default, null, "通讯录")), React.createElement(tabbar_item_2.default, {active: this.state.tab == 2, onClick: function (e) { return _this.setState({ tab: 2 }); }, icon: React.createElement("img", {src: IconArticle}), label: "发现"}), React.createElement(tabbar_item_2.default, {active: this.state.tab == 3, onClick: function (e) { return _this.setState({ tab: 3 }); }, icon: React.createElement("img", {src: IconCell}), label: "我"}))));
-        };
-        return Main;
-    }(React.Component));
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = Main;
-    ;
-});
-/**
  * Created by jf on 15/12/4.
  */
 define("weui/components/button/button_area", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
@@ -1600,10 +1229,37 @@ define("weui/components/msg/index", ["require", "exports", "weui/components/msg/
 /**
  * Created by jf on 15/12/11.
  */
-define("weui/components/article/index", ["require", "exports", "weui/components/article/article"], function (require, exports, article_2) {
+define("weui/components/article/article", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var Article = (function (_super) {
+        __extends(Article, _super);
+        function Article() {
+            _super.apply(this, arguments);
+        }
+        Article.prototype.render = function () {
+            var _a = this.props, className = _a.className, children = _a.children;
+            var cls = classNames((_b = {
+                    weui_article: true
+                },
+                _b[className] = className,
+                _b
+            ));
+            return (React.createElement("article", __assign({className: cls}, this.props), children));
+            var _b;
+        };
+        return Article;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = Article;
+    ;
+});
+/**
+ * Created by jf on 15/12/11.
+ */
+define("weui/components/article/index", ["require", "exports", "weui/components/article/article"], function (require, exports, article_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = article_2.default;
+    exports.default = article_1.default;
 });
 /**
  * Created by jf on 15/11/3.
@@ -2071,16 +1727,338 @@ define("weui/components/mediabox/index", ["require", "exports", "weui/components
 /**
  * Created by n7best
  */
-define("weui/components/tab/index", ["require", "exports", "weui/components/tab/tab", "weui/components/tab/tab_body", "weui/components/tab/navbar", "weui/components/tab/navbar_item", "weui/components/tab/tabbar", "weui/components/tab/tabbar_item", "weui/components/tab/tabbar_icon", "weui/components/tab/tabbar_label", "weui/components/tab/tab_body_item"], function (require, exports, tab_2, tab_body_3, navbar_2, navbar_item_2, tabbar_3, tabbar_item_3, tabbar_icon_3, tabbar_label_3, tab_body_item_2) {
+define("weui/components/tab/tab_body", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
     "use strict";
-    exports.Tab = tab_2.default;
-    exports.TabBody = tab_body_3.default;
+    var TabBody = (function (_super) {
+        __extends(TabBody, _super);
+        function TabBody() {
+            _super.apply(this, arguments);
+        }
+        TabBody.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className;
+            var cls = classNames({
+                weui_tab_bd: true
+            }, className);
+            return (React.createElement("div", __assign({className: cls}, this.props), children));
+        };
+        return TabBody;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBody;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tab_body_item", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var TabBodyItem = (function (_super) {
+        __extends(TabBodyItem, _super);
+        function TabBodyItem() {
+            _super.apply(this, arguments);
+        }
+        TabBodyItem.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className, active = _a.active;
+            var cls = classNames({
+                weui_tab_bd_item: true
+            }, className);
+            return (React.createElement("div", __assign({className: cls, style: { display: active ? 'block' : 'none' }}, this.props), children));
+        };
+        TabBodyItem.propTypes = {
+            active: React.PropTypes.bool
+        };
+        TabBodyItem.defaultProps = {
+            active: false
+        };
+        return TabBodyItem;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBodyItem;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/navbar", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var NavBar = (function (_super) {
+        __extends(NavBar, _super);
+        function NavBar() {
+            _super.apply(this, arguments);
+        }
+        NavBar.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className;
+            var cls = classNames({
+                weui_navbar: true
+            }, className);
+            return (React.createElement("div", __assign({className: cls}, this.props), children));
+        };
+        return NavBar;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = NavBar;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/navbar_item", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var NavBarItem = (function (_super) {
+        __extends(NavBarItem, _super);
+        function NavBarItem() {
+            _super.apply(this, arguments);
+        }
+        NavBarItem.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className, active = _a.active, label = _a.label;
+            var cls = classNames({
+                weui_navbar_item: true,
+                weui_bar_item_on: active
+            }, className);
+            return (React.createElement("div", __assign({className: cls}, this.props), label ? label : children));
+        };
+        NavBarItem.propTypes = {
+            active: React.PropTypes.bool,
+            label: React.PropTypes.string
+        };
+        NavBarItem.defaultProps = {
+            active: false,
+        };
+        return NavBarItem;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = NavBarItem;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tabbar", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var TabBar = (function (_super) {
+        __extends(TabBar, _super);
+        function TabBar() {
+            _super.apply(this, arguments);
+        }
+        TabBar.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className;
+            var cls = classNames({
+                weui_tabbar: true
+            }, className);
+            return (React.createElement("div", __assign({className: cls}, this.props), children));
+        };
+        return TabBar;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBar;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tabbar_icon", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var TabBarIcon = (function (_super) {
+        __extends(TabBarIcon, _super);
+        function TabBarIcon() {
+            _super.apply(this, arguments);
+        }
+        TabBarIcon.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className;
+            var cls = classNames({
+                weui_tabbar_icon: true,
+            }, className);
+            return (React.createElement("div", __assign({className: cls}, this.props), children));
+        };
+        return TabBarIcon;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBarIcon;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tabbar_label", ["require", "exports", "react", 'classnames'], function (require, exports, React, classNames) {
+    "use strict";
+    var TabBarLabel = (function (_super) {
+        __extends(TabBarLabel, _super);
+        function TabBarLabel() {
+            _super.apply(this, arguments);
+        }
+        TabBarLabel.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className;
+            var cls = classNames({
+                weui_tabbar_label: true,
+            }, className);
+            return (React.createElement("p", __assign({className: cls}, this.props), children));
+        };
+        return TabBarLabel;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBarLabel;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tabbar_item", ["require", "exports", "react", 'classnames', "weui/components/tab/tabbar_icon", "weui/components/tab/tabbar_label"], function (require, exports, React, classNames, tabbar_icon_1, tabbar_label_1) {
+    "use strict";
+    var TabBarItem = (function (_super) {
+        __extends(TabBarItem, _super);
+        function TabBarItem() {
+            _super.apply(this, arguments);
+        }
+        TabBarItem.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className, active = _a.active, icon = _a.icon, label = _a.label;
+            var cls = classNames({
+                weui_tabbar_item: true,
+                weui_bar_item_on: active
+            }, className);
+            if (icon || label) {
+                return (React.createElement("div", __assign({className: cls}, this.props), icon ? React.createElement(tabbar_icon_1.default, null, icon) : false, label ? React.createElement(tabbar_label_1.default, null, label) : false));
+            }
+            else {
+                return (React.createElement("div", __assign({className: cls}, this.props), children));
+            }
+        };
+        TabBarItem.propTypes = {
+            active: React.PropTypes.bool,
+            icon: React.PropTypes.any,
+            label: React.PropTypes.string
+        };
+        TabBarItem.defaultProps = {
+            active: false,
+            icon: false,
+            label: ''
+        };
+        return TabBarItem;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = TabBarItem;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/tab", ["require", "exports", "react", 'classnames', "weui/components/tab/tab_body", "weui/components/tab/tab_body_item", "weui/components/tab/navbar", "weui/components/tab/navbar_item", "weui/components/tab/tabbar", "weui/components/tab/tabbar_item"], function (require, exports, React, classNames, tab_body_1, tab_body_item_1, navbar_1, navbar_item_1, tabbar_1, tabbar_item_1) {
+    "use strict";
+    var Tab = (function (_super) {
+        __extends(Tab, _super);
+        function Tab() {
+            _super.apply(this, arguments);
+            this.state = {
+                index: this.props.defaultIndex
+            };
+        }
+        Tab.prototype.handleHeaderClick = function (idx) {
+            this.setState({ index: idx });
+            if (this.props.onChange)
+                this.props.onChange(idx);
+        };
+        Tab.prototype.parseNavBar = function (children) {
+            var navHeaders = [];
+            var navContents = [];
+            React.Children.map(children, function (child) {
+                var _a = child.props, children = _a.children, type = _a.type;
+                if (child.type === navbar_item_1.default) {
+                    navHeaders.push(child);
+                    if (children)
+                        navContents.push(React.createElement(tab_body_item_1.default, {children: children}));
+                }
+                else if (child.type === tab_body_item_1.default) {
+                    navContents.push(child);
+                }
+            });
+            return { navHeaders: navHeaders, navContents: navContents };
+        };
+        Tab.prototype.renderNavBar = function (headers, contents, cls) {
+            var _this = this;
+            var _headers = headers.map(function (item, idx) {
+                return React.cloneElement(item, {
+                    key: idx,
+                    active: _this.state.index === idx,
+                    onClick: _this.handleHeaderClick.bind(_this, idx, item)
+                });
+            });
+            var _contents = contents.map(function (item, idx) {
+                return React.cloneElement(item, {
+                    key: idx,
+                    active: _this.state.index === idx,
+                    tabIndex: idx
+                });
+            });
+            return (React.createElement("div", {className: cls}, React.createElement(navbar_1.default, null, _headers), React.createElement(tab_body_1.default, null, _contents)));
+        };
+        Tab.prototype.parseTabBar = function (children) {
+            var tabHeaders = [];
+            var tabContents = [];
+            React.Children.map(children, function (child) {
+                var _a = child.props, children = _a.children, type = _a.type;
+                if (child.type === tabbar_item_1.default) {
+                    tabHeaders.push(child);
+                    if (children)
+                        tabContents.push(React.createElement(tab_body_item_1.default, {children: children}));
+                }
+                else if (child.type === tab_body_item_1.default) {
+                    tabContents.push(child);
+                }
+            });
+            return { tabHeaders: tabHeaders, tabContents: tabContents };
+        };
+        Tab.prototype.renderTabBar = function (headers, contents, cls) {
+            var _this = this;
+            var _headers = headers.map(function (item, idx) {
+                return React.cloneElement(item, {
+                    key: idx,
+                    active: _this.state.index === idx,
+                    onClick: _this.handleHeaderClick.bind(_this, idx, item)
+                });
+            });
+            var _contents = contents.map(function (item, idx) {
+                return React.cloneElement(item, {
+                    key: idx,
+                    active: _this.state.index === idx,
+                    tabIndex: idx
+                });
+            });
+            return (React.createElement("div", {className: cls}, React.createElement(tab_body_1.default, null, _contents), React.createElement(tabbar_1.default, null, _headers)));
+        };
+        Tab.prototype.render = function () {
+            var _a = this.props, children = _a.children, className = _a.className, type = _a.type;
+            var cls = classNames({
+                weui_tab: true
+            }, className);
+            switch (type) {
+                case 'tabbar':
+                    var _b = this.parseTabBar(children), tabHeaders = _b.tabHeaders, tabContents = _b.tabContents;
+                    return this.renderTabBar(tabHeaders, tabContents, cls);
+                case 'navbar':
+                    var _c = this.parseNavBar(children), navHeaders = _c.navHeaders, navContents = _c.navContents;
+                    return this.renderNavBar(navHeaders, navContents, cls);
+                default:
+                    return (React.createElement("div", __assign({className: cls}, this.props), children));
+            }
+        };
+        Tab.propTypes = {
+            type: React.PropTypes.string,
+            defaultIndex: React.PropTypes.number,
+            onChange: React.PropTypes.func
+        };
+        Tab.defaultProps = {
+            type: 'normal',
+            defaultIndex: 0
+        };
+        return Tab;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = Tab;
+});
+/**
+ * Created by n7best
+ */
+define("weui/components/tab/index", ["require", "exports", "weui/components/tab/tab", "weui/components/tab/tab_body", "weui/components/tab/navbar", "weui/components/tab/navbar_item", "weui/components/tab/tabbar", "weui/components/tab/tabbar_item", "weui/components/tab/tabbar_icon", "weui/components/tab/tabbar_label", "weui/components/tab/tab_body_item"], function (require, exports, tab_1, tab_body_2, navbar_2, navbar_item_2, tabbar_2, tabbar_item_2, tabbar_icon_2, tabbar_label_2, tab_body_item_2) {
+    "use strict";
+    exports.Tab = tab_1.default;
+    exports.TabBody = tab_body_2.default;
     exports.NavBar = navbar_2.default;
     exports.NavBarItem = navbar_item_2.default;
-    exports.TabBar = tabbar_3.default;
-    exports.TabBarItem = tabbar_item_3.default;
-    exports.TabBarIcon = tabbar_icon_3.default;
-    exports.TabBarLabel = tabbar_label_3.default;
+    exports.TabBar = tabbar_2.default;
+    exports.TabBarItem = tabbar_item_2.default;
+    exports.TabBarIcon = tabbar_icon_2.default;
+    exports.TabBarLabel = tabbar_label_2.default;
     exports.TabBodyItem = tab_body_item_2.default;
 });
 /**
@@ -2212,9 +2190,87 @@ define("weui/index", ["require", "exports", "weui/components/button/index", "weu
     exports.TabBarLabel = index_15.TabBarLabel;
     exports.SearchBar = index_16.default;
 });
-define("login", ["require", "exports", "react", "weui/index", 'react-router', "db"], function (require, exports, React, index_17, react_router_1, db_1) {
+// A '.tsx' file enables JSX support in the TypeScript compiler, 
+// for more information see the following page on the TypeScript wiki:
+// https://github.com/Microsoft/TypeScript/wiki/JSX
+define("logout", ["require", "exports", "react", "weui/index", 'react-router'], function (require, exports, React, index_17, react_router_1) {
     "use strict";
-    var Alert = index_17.Dialog.Alert, Confirm = index_17.Dialog.Confirm;
+    var Logout = (function (_super) {
+        __extends(Logout, _super);
+        function Logout() {
+            var _this = this;
+            _super.apply(this, arguments);
+            this.state = {
+                show: false,
+                menus: [{
+                        label: '退出登录',
+                        onClick: function () {
+                            localStorage.removeItem("auth");
+                            _this.setState({ show: false });
+                            react_router_1.hashHistory.push("/login");
+                        }
+                    }],
+                actions: [
+                    {
+                        label: '取消',
+                        onClick: this.hide.bind(this)
+                    }
+                ]
+            };
+        }
+        Logout.prototype.componentWillMount = function () {
+            this.props.setCallback(this.show, this);
+        };
+        Logout.prototype.hide = function () {
+            this.setState({ show: false });
+        };
+        Logout.prototype.show = function () {
+            console.log("show");
+            this.setState({ show: true });
+        };
+        Logout.prototype.render = function () {
+            return React.createElement(index_17.ActionSheet, {menus: this.state.menus, actions: this.state.actions, onRequestClose: this.hide.bind(this), show: this.state.show});
+        };
+        return Logout;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = Logout;
+});
+define("main", ["require", "exports", "react", "weui/index", "logout"], function (require, exports, React, index_18, logout_1) {
+    "use strict";
+    var IconButton = '/images/icon_nav_button.png';
+    var IconMsg = '/images/icon_nav_msg.png';
+    var IconArticle = '/images/icon_nav_article.png';
+    var IconCell = '/images/icon_nav_cell.png';
+    var callback = null;
+    var tag = null;
+    var Main = (function (_super) {
+        __extends(Main, _super);
+        function Main() {
+            _super.apply(this, arguments);
+            this.state = {
+                tab: 0
+            };
+        }
+        Main.prototype.showLogoutMenu = function () {
+            this.setState({ tab: 3 });
+            if (callback) {
+                callback.call(tag);
+            }
+        };
+        Main.prototype.render = function () {
+            var _this = this;
+            return (React.createElement(index_18.Tab, null, React.createElement(index_18.TabBody, null, React.createElement(logout_1.default, {setCallback: function (f, e) { callback = f; tag = e; }}), React.createElement(index_18.Article, null, this.props.children)), React.createElement(index_18.TabBar, null, React.createElement(index_18.TabBarItem, {active: this.state.tab == 0, onClick: function (e) { return _this.setState({ tab: 0 }); }, icon: React.createElement("img", {src: IconButton}), label: "微信"}), React.createElement(index_18.TabBarItem, {active: this.state.tab == 1, onClick: function (e) { return _this.setState({ tab: 1 }); }}, React.createElement(index_18.TabBarIcon, null, React.createElement("img", {src: IconMsg})), React.createElement(index_18.TabBarLabel, null, "通讯录")), React.createElement(index_18.TabBarItem, {active: this.state.tab == 2, onClick: function (e) { return _this.setState({ tab: 2 }); }, icon: React.createElement("img", {src: IconArticle}), label: "发现"}), React.createElement(index_18.TabBarItem, {active: this.state.tab == 3, onClick: this.showLogoutMenu.bind(this), icon: React.createElement("img", {src: IconCell}), label: "我"}))));
+        };
+        return Main;
+    }(React.Component));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.default = Main;
+    ;
+});
+define("login", ["require", "exports", "react", "weui/index", 'react-router', "db"], function (require, exports, React, index_19, react_router_2, db_1) {
+    "use strict";
+    var Alert = index_19.Dialog.Alert, Confirm = index_19.Dialog.Confirm;
     var Login = (function (_super) {
         __extends(Login, _super);
         function Login() {
@@ -2243,14 +2299,13 @@ define("login", ["require", "exports", "react", "weui/index", 'react-router', "d
             this.setState({ showAlert: false });
         };
         Login.prototype.onSubmit = function () {
-            this.props.appState.login = true;
             if (this.state.userNameValid && this.state.passwordValid) {
                 this.setState({ loading: true });
                 db_1.auth.login({
                     user: this.state.userName, password: this.state.password
                 }).then(function (data) {
                     localStorage.setItem("auth", JSON.stringify({ userId: data.userId, accessToken: data.accessToken }));
-                    react_router_1.hashHistory.push({ pathname: '/' });
+                    react_router_2.hashHistory.push({ pathname: '/' });
                 }).fail(function (data) {
                     var res = data.responseJSON;
                     console.log(res);
@@ -2275,17 +2330,17 @@ define("login", ["require", "exports", "react", "weui/index", 'react-router', "d
             this.setState({ showPass: e.target.checked });
         };
         Login.prototype.render = function () {
-            return (React.createElement("div", null, React.createElement(Alert, {title: this.state.alert.title, buttons: this.state.alert.buttons, show: this.state.showAlert}, this.state.alertMsg), React.createElement(index_17.Toast, {show: this.state.loading, icon: "loading"}, "加载中"), React.createElement("div", {class: "hd"}, React.createElement("h1", {className: "page_title"}, "用户登录")), React.createElement(index_17.Form, null, React.createElement(index_17.FormCell, {warn: this.state.userName.length > 0 && !this.state.userNameValid, success: true}, React.createElement(index_17.CellHeader, null, React.createElement(index_17.Label, null, "用户名")), React.createElement(index_17.CellBody, null, React.createElement(index_17.Input, {type: "tel", placeholder: "请输入手机号", value: this.state.userName, onChange: this.userNameChange.bind(this)})), React.createElement(index_17.CellFooter, null, React.createElement(index_17.Icon, {value: this.state.userNameValid ? "success" : "warn"}))), React.createElement(index_17.FormCell, {warn: !this.state.passwordValid && this.state.password.length > 0}, React.createElement(index_17.CellHeader, null, React.createElement(index_17.Label, null, "密　码")), React.createElement(index_17.CellBody, null, React.createElement(index_17.Input, {type: this.state.showPass ? "tel" : "password", placeholder: "请输入密码", value: this.state.password, onChange: this.passwordChange.bind(this)})), React.createElement(index_17.CellFooter, null, React.createElement(index_17.Icon, {value: this.state.passwordValid ? "success" : "warn"}))), React.createElement(index_17.FormCell, null, React.createElement(index_17.CellBody, {style: { "text-align": "right" }}, "显示密码"), React.createElement(index_17.CellFooter, null, React.createElement(index_17.Switch, {onChange: this.tooglePassword.bind(this), checked: this.state.showPass})))), React.createElement(index_17.ButtonArea, null, React.createElement(index_17.Button, {onClick: this.onSubmit.bind(this), disabled: !(this.state.userNameValid && this.state.passwordValid)}, "确定"))));
+            return (React.createElement("div", null, React.createElement(Alert, {title: this.state.alert.title, buttons: this.state.alert.buttons, show: this.state.showAlert}, this.state.alertMsg), React.createElement(index_19.Toast, {show: this.state.loading, icon: "loading"}, "加载中"), React.createElement("div", {class: "hd"}, React.createElement("h1", {className: "page_title"}, "用户登录")), React.createElement(index_19.Form, null, React.createElement(index_19.FormCell, {warn: this.state.userName.length > 0 && !this.state.userNameValid, success: true}, React.createElement(index_19.CellHeader, null, React.createElement(index_19.Label, null, "用户名")), React.createElement(index_19.CellBody, null, React.createElement(index_19.Input, {type: "tel", placeholder: "请输入手机号", value: this.state.userName, onChange: this.userNameChange.bind(this)})), React.createElement(index_19.CellFooter, null, React.createElement(index_19.Icon, {value: this.state.userNameValid ? "success" : "warn"}))), React.createElement(index_19.FormCell, {warn: !this.state.passwordValid && this.state.password.length > 0}, React.createElement(index_19.CellHeader, null, React.createElement(index_19.Label, null, "密　码")), React.createElement(index_19.CellBody, null, React.createElement(index_19.Input, {type: this.state.showPass ? "tel" : "password", placeholder: "请输入密码", value: this.state.password, onChange: this.passwordChange.bind(this)})), React.createElement(index_19.CellFooter, null, React.createElement(index_19.Icon, {value: this.state.passwordValid ? "success" : "warn"}))), React.createElement(index_19.FormCell, null, React.createElement(index_19.CellBody, {style: { "text-align": "right" }}, "显示密码"), React.createElement(index_19.CellFooter, null, React.createElement(index_19.Switch, {onChange: this.tooglePassword.bind(this), checked: this.state.showPass})))), React.createElement(index_19.ButtonArea, null, React.createElement(index_19.Button, {onClick: this.onSubmit.bind(this), disabled: !(this.state.userNameValid && this.state.passwordValid)}, "确定"))));
         };
         return Login;
     }(React.Component));
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = Login;
 });
-define("app", ["require", "exports", "react", "react-dom", "main", 'react-router', "login"], function (require, exports, React, ReactDOM, main_1, react_router_2, login_1) {
+define("app", ["require", "exports", "react", "react-dom", "main", 'react-router', "login"], function (require, exports, React, ReactDOM, main_1, react_router_3, login_1) {
     "use strict";
     var state = {
-        login: false
+        user: null
     };
     var LoginWrapper = (function (_super) {
         __extends(LoginWrapper, _super);
@@ -2314,13 +2369,20 @@ define("app", ["require", "exports", "react", "react-dom", "main", 'react-router
         }
         App.prototype.handleEnter = function (_a, repalce) {
             var location = _a.location;
+            var authString = localStorage.getItem("auth");
+            if (authString) {
+                state.user = JSON.parse(authString);
+            }
+            else {
+                state.user = null;
+            }
             var pathname = location.pathname;
-            if (pathname != "/login" && !state.login) {
+            if (pathname != "/login" && state.user == null) {
                 repalce("/login");
             }
         };
         App.prototype.render = function () {
-            return (React.createElement(react_router_2.Router, {history: react_router_2.hashHistory}, React.createElement(react_router_2.Route, {path: "/", component: MainWrapper, onEnter: this.handleEnter.bind(this)}), React.createElement(react_router_2.Route, {path: "login", component: LoginWrapper})));
+            return (React.createElement(react_router_3.Router, {history: react_router_3.hashHistory}, React.createElement(react_router_3.Route, {path: "/", component: MainWrapper, onEnter: this.handleEnter.bind(this)}), React.createElement(react_router_3.Route, {path: "login", component: LoginWrapper})));
         };
         return App;
     }(React.Component));
