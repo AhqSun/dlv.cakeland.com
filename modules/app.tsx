@@ -12,7 +12,7 @@ import Login from 'login'
 
 
 var state = {
-    login: false
+    login: false 
 };
 
 
@@ -33,8 +33,7 @@ class App extends React.Component<any , any>{
   
  
     handleEnter({location}, repalce: any) {   
-        var {pathname} = location;
-        console.log(state);
+        var {pathname} = location;       
         if (pathname != "/login" &&!state.login) {           
             repalce("/login");
         }

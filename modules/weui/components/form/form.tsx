@@ -9,7 +9,7 @@ import * as classNames from 'classnames';
 const { Component, PropTypes } = React;
 
 
-export default class Form extends Component<any,any> {
+export default class Form extends React.Component<any,any> {
     static propTypes = {
         radio: PropTypes.bool,
         checkbox: PropTypes.bool

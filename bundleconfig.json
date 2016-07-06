@@ -1,0 +1,33 @@
+[
+  {
+    "outputFileName": "js/all.min.js",
+    "inputFiles": [
+      "js/all.js"
+    ]
+  },
+  {
+    "outputFileName": "js/q.js",
+    "inputFiles": [
+      "node_modules/Q/q.js"
+    ]
+  },
+  {
+    "outputFileName": "js/db.js",
+    "inputFiles": [
+      "modules/lib/data-base.js"
+    ]
+  },
+  {
+    "outputFileName": "js/classnames.js",
+    "inputFiles": [
+      "node_modules/classnames/index.js"
+    ]
+  },
+
+  {
+    "outputFileName": "js/require.js",
+    "inputFiles": [
+      "node_modules/requirejs/require.js"
+    ]
+  }
+]

@@ -29,7 +29,7 @@ class Icon extends React.Component<any, any> {
             return (
                 <div className="weui_loading">
                     {
-                        [...Array(12)].map((x, i) => {
+                        [0,1,2,3,4,5,6,7,8,9,10,11].map((x, i) => {
                             return (
                                 <div key={i} className={`weui_loading_leaf weui_loading_leaf_${i}`}></div>
                             );

@@ -1,16 +1,17 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
     "sourceMap": true,
     "target": "es5",
     "module": "amd",
-    "jsx": "react"
+    "jsx": "react",
+    "outFile": "js/all.js"
   },
   "exclude": [
     "node_modules",
-    "wwwroot"
+    "wwwroot"  
   ]
 }

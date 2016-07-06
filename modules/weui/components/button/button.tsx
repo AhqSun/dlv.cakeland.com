@@ -1,9 +1,6 @@
 /**
  * Created by jf on 15/10/27.
  */
-
-
-
 import * as React from "react";
 import * as classNames from 'classnames';
 

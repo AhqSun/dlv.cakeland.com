@@ -13,12 +13,14 @@
             paths: {
                 'react': '/node_modules/react/dist/react.min',
                 'react-dom': '/node_modules/react-dom/dist/react-dom.min',
-                'react-router': '/node_modules/react-router/umd/ReactRouter',         
-                'react-weui': '/node_modules/react-weui/lib/index',
-                'classnames': '/node_modules/classnames/index',
-                'db': '/modules/lib/data-base',
+                'react-router': '/node_modules/react-router/umd/ReactRouter.min',
                 'jquery': '/node_modules/jquery/dist/jquery.min',
-                'Q': '/node_modules/Q/q.es5.min'
+                'classnames': '/js/classnames.min',
+                'db': '/js/db.min',
+                'Q': '/js/q.min',
+                'md5': 'http://res.cakeland.com/bower_components/JavaScript-MD5/js/md5.min',             
+                'config': '/modules/config',
+                'app':'/js/all.min'
             },
             shim: {
 
@@ -26,7 +28,10 @@
             }
         };
     </script>
-    <script src="/node_modules/requirejs/require.js" data-main="/modules/app"></script>
+    <script src="/js/require.min.js"  ></script> 
+    <script>
+        require(["app"]);
+    </script>
 </head>
 <body>   
     <div id="loadingToast" class="weui_loading_toast">

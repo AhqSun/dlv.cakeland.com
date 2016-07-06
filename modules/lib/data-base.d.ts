@@ -7,16 +7,16 @@ declare namespace DataBase {
     interface Data {
         valid: boolean;
         data?: any;
-        list:Array<any>
+        list?:Array<any>
     }
     interface Get<T1,T2> extends Function {
-        (params:T1):Q.IPromise<T2>;
+        (params:T1):Q.Promise<any>;
     }
 
     
 
     interface Auth {    
-        login: Get<{uname:string,pwd:string},Data>;
+        login: Get<{ user: string, password:string},any>;
     }
  
     var auth: Auth;

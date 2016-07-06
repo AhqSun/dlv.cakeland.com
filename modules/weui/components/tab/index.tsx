@@ -14,7 +14,7 @@ import TabBarIcon from './tabbar_icon';
 import TabBarLabel from './tabbar_label';
 import TabBodyItem from './tab_body_item';
 
-export default {
+export  {
    NavBar,
    NavBarItem,
    Tab,

@@ -3,27 +3,17 @@
 // for more information see the following page on the TypeScript wiki:
 // https://github.com/Microsoft/TypeScript/wiki/JSX
 import * as React from "react";
-import Form from "./weui/components/form/form";
-import FormCell from "./weui/components/form/form_cell";
-import CellHeader from "./weui/components/cell/cell_header";
-import CellBody from "./weui/components/cell/cell_body";
-import CellsTitle from "./weui/components/cell/cells_title";
-import Label from "./weui/components/label/label";
-import Input from "./weui/components/form/input";
-import Panel from "./weui/components/panel/panel";
-import CellFooter from "./weui/components/cell/cell_footer";
-import Icon from "./weui/components/icon/icon";
 
-import Switch from "./weui/components/form/switch";
-
-import ButtonArea from "./weui/components/button/button_area";
-import Button from "./weui/components/button/button";
-
+import {
+    Form, FormCell, CellHeader, CellBody, CellsTitle, Label, Input, CellFooter,
+    Icon, Switch, ButtonArea, Button,
+    Toast, Dialog
+} from "./weui/index";
+const {Alert, Confirm} = Dialog;
 import {hashHistory } from 'react-router';
 
 import {auth} from "db";
 
-const vcodeSrc = "https://weui.io/images/vcode.jpg";
 
 
 export default class Login extends React.Component<any, any>{
@@ -35,14 +25,50 @@ export default class Login extends React.Component<any, any>{
             userNameValid: false,
             password: "",
             passwordValid: false,
-            showPass: false
+            showPass: false,
+            loading: false,
+            showAlert: false,
+            alertMsg:'',
+            alert: {
+                title: '登录提示',              
+                buttons: [
+                    {
+                        label: '确定',
+                        onClick: this.hideAlert.bind(this)
+                    }
+                ]
+            }
         };
     }
-    handleClick() {
+    hideAlert() {
+        this.setState({ showAlert: false });
+    }
+
+    onSubmit() {
         this.props.appState.login = true;
-        hashHistory.push({
-            pathname: '/'
-        });
+        if (this.state.userNameValid && this.state.passwordValid) {
+            this.setState({ loading: true });
+            auth.login({
+                user: this.state.userName, password: this.state.password
+            }).then(function (data) { 
+                    localStorage.setItem("auth", JSON.stringify({ userId: data.userId, accessToken: data.accessToken }));
+                    hashHistory.push({ pathname: '/' });
+                }).fail(function (data) {
+                    var res = data.responseJSON;
+                    console.log(res);
+                    this.setState(
+                        {
+                            showAlert: true,
+                            alertMsg:res.msg                          
+                        }
+                    );        
+
+                }.bind(this)).done(function () {
+                    this.setState({ loading: false });
+                }.bind(this));
+          
+        }
+       
     }
     userNameChange(e: any) {
         var val = e.target.value;
@@ -58,6 +84,12 @@ export default class Login extends React.Component<any, any>{
     render() {
         return (
             <div>
+                <Alert title={this.state.alert.title} buttons={this.state.alert.buttons} show={this.state.showAlert}>
+                    {this.state.alertMsg}
+                </Alert>
+                <Toast show={this.state.loading}  icon="loading">
+                    加载中
+                </Toast>
                 <div class="hd">
                     <h1 className="page_title">用户登录</h1>
                 </div>
@@ -94,7 +126,7 @@ export default class Login extends React.Component<any, any>{
                     </FormCell>
                 </Form>
                 <ButtonArea>
-                    <Button onClick={this.handleClick.bind(this) }>确定</Button>
+                    <Button onClick={this.onSubmit.bind(this) } disabled={!(this.state.userNameValid && this.state.passwordValid)}>确定</Button>
                 </ButtonArea>
             </div>
         );

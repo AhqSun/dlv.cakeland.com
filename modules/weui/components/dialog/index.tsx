@@ -7,7 +7,7 @@
 import Confirm from './confirm';
 import Alert from './alert';
 
-export default {
+export {
     Confirm,
     Alert
 };

@@ -14,7 +14,7 @@ import Checkbox from './checkbox';
 import Select from './select';
 import Uploader from './uploader';
 
-export default {
+export  {
     Form,
     FormCell,
     TextArea,

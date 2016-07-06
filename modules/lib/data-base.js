@@ -143,6 +143,9 @@ define('DataBase', ['Q', 'utils', 'config', 'md5', 'jquery'], function (Q, utils
                     resolve(res, status, ajax);
                 })
                 .fail(function (response, status, message) {
+                    if (response && response.status == 400) {
+                        reject(response, status, message);
+                    }
                     reject(new Error(response.responseText ||
                         status == "timeout" ? "请求超时,当前超时时间为:" + self.timeout + "毫秒"
                         : status + ":" + message));
@@ -241,16 +244,16 @@ define("db", ['require', 'Q'], function (require, Q) {
         }
     }
 
-    //enableShortCall("activity", ['get', 'getSn', 'query']);
+    enableShortCall("auth", ['login']);
    
     return db;
 });
 
 define('db.auth', ['DataBase', 'module'], function (DataBase, module) {
     var ctx = new DataBase(module);
-    ctx.path = "/discount-card";
-    ctx.get = function (option) {
-        option.url = ":sn";
+    ctx.path = "/authentication";
+    ctx.login = function (option) {
+        option.method = "POST";
     };
     return ctx.wrap();
 });
